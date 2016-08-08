@@ -1,0 +1,39 @@
+<div class="register_interval">
+	<form action='index.php?action=register-interval' method='post' accept-charset='UTF-8'>
+		<fieldset >
+			<legend>Ajout d'un cours</legend>
+			<p>Tous les champs sont obligatoires !</p>
+			<input type='hidden' name='submitted' id='submitted' value='1'/>
+			<label for='module' >Nom du module :</label> <input type='text' name='module' id='module' maxlength='50' required="true"/> <br/>
+			<label for='startHour' >Heure début :</label> <input type='number' name='startHour' id='startHour' maxlength='50' min="8" max="17" required="true"/>  <br/>
+			<label for='endHour' >Heure de fin :</label> <input type='number' name='endHour' id='endHour' maxlength='50' min="9" max="18" required="true"/> <br/>
+			<label for='teacher' >Professeur : </label>
+			<select name="teacher" id="teacher" required>
+			<?php
+				$result=TeacherDAO::getAllTeachers();
+				foreach ($result as $value) {
+					echo '<option value="'.$value["id"].'">'.$value["last_name"].' '.$value["first_name"].'</option>';
+				}
+				echo '</select><br/>';
+				
+				$result=GroupDAO::getAllGroups();
+				echo "<label for='group' >Groupe : </label>";
+				echo '<select name="group" id="group" required>';
+				foreach ($result as $value) {
+					echo '<option value="'.$value["name"].'">'.$value["name"].'</option>';
+				}
+			?>
+			</select><br/>
+			<label for='day' >Jour : </label>
+			<select name="day" id="day" required>
+				<option value="0">Lundi</option>
+				<option value="1">Mardi</option>
+				<option value="2">Mercredi</option>
+				<option value="3">Jeudi</option>
+				<option value="4">Vendredi</option>
+			</select>
+			<br/>
+			<input type='submit' value='Valider' />
+		</fieldset>
+	</form>
+</div>

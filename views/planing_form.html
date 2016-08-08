@@ -1,0 +1,17 @@
+<form action='index.php?action=planing' method='POST' accept-charset='UTF-8'>
+	<fieldset >
+		<legend>Consulter un planning</legend>
+		<label for='group' >Voir le planning du groupe :</label>
+		<select name="groupname" id="group" required>
+		<?php
+			$groups=GroupDAO::getAllGroups();
+			foreach ($groups as $key => $value) {
+				foreach ($value as $key => $value2) {
+					echo '<option value="'.$value2.'">'.$value2.'</option>';
+				}
+			}
+		?>
+		</select>
+		<input type='submit' value='Valider' />
+	</fieldset>
+</form>

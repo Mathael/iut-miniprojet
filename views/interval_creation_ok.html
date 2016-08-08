@@ -1,0 +1,14 @@
+<h1>Le cours à été ajouté avec succès !</h1>
+
+<h2>Récapitulatif</h2>
+<?php
+echo "Cours de ".$interval->getName()."<br/>";
+
+echo DayOfWeek::toString($interval->getDay())." de " . $interval->getStartHour()."h à ".$interval->getEndHour()."h<br/>";
+
+$iTeacher = TeacherDAO::getTeacherById($interval->getTeacher());
+echo "Enseignant : ".$iTeacher->getLastname()." ".$iTeacher->getFirstname()."<br/>";
+
+$iGroup = GroupDAO::getGroupByName($interval->getGroup());
+echo "Groupe : ".$iGroup->getName()."<br/>";
+?>

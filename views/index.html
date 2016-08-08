@@ -1,0 +1,13 @@
+		<h2>Connexion au service</h2>
+		<form method="POST" action="?action=login">
+			<div class="center">
+				<input type="text" name="id" placeholder="Nom d'utilisateur" required />
+				<input type="password" name="password" placeholder="Mot de passe" required />
+				<select name="type" required>
+					<option value="Student">Etudiant</option>
+					<option value="Teacher">Professeur</option>
+					<option value="Secretarie">Secretaire</option>
+				</select>
+				<input type="submit" value="Connexion" />
+			</div>
+		</form>

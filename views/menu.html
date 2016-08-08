@@ -1,0 +1,24 @@
+		<nav>
+			<ul>
+				<?php
+				echo "\t<li><a href=\"?action=index\">Accueil</a></li>\n";
+
+				if(isset($_SESSION['online'])){
+					echo "\t<li><a href=\"?action=planing\">Planing</a></li>\n";
+					echo "\t<li><a href=\"?action=disconnect\">Déconnexion</a></li>\n";
+				}
+
+				echo "</ul>\n";
+
+				if (isset($_SESSION['type']) && $_SESSION['type'] == UserType::Secretary){
+					echo "<ul>\n";
+					echo "\t<li><a href=\"?action=register\">Nouveau compte</a></li>\n";
+					echo "\t<li><a href=\"?action=register-interval\">Ajouter un cours</a></li>\n";
+					echo "\t<li><a href=\"?action=register_group\">Ajouter un groupe</a></li>\n";
+					echo "\t<li><a href=\"?action=modify-user\">Modifier un utilisateur</a></li>\n";
+					echo "\t<li><a href=\"?action=delete_interval\">Supprimer un cours</a></li>\n";
+					echo "\t<li><a href=\"?action=delete_group\">Supprimer un groupe</a></li>\n";
+					echo "</ul>\n";
+				}
+				?>
+		</nav>

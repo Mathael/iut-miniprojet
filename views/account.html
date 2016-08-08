@@ -1,0 +1,3 @@
+<h1>Bienvenue !</h1>
+
+<p>Vous etes connecté en tant que : <?php if(!empty($_SESSION['type'])){echo UserType::toString($_SESSION['type']);}else{echo "Erreur sur votre session.";} ?> </p>

@@ -1,0 +1,14 @@
+<div style="text-align: center;">
+	<form method="POST" action="?action=modify-user">
+		<input type="hidden" name="submitted" value="1"/>
+		<p><input type="text" name="id" value="<?php echo $user->getId(); ?>" required/></p>
+		<p><input type="text" name="lastname" value="<?php echo $user->getLastname(); ?>" required/></p>
+		<p><input type="text" name="firstname" value="<?php echo $user->getFirstname(); ?>" required/></p>
+
+		<?php if(is_a($user, 'Student')){echo "<p><input type=\"text\" name=\"group\" value=\"".$user->getGroup()."\" required /></p>";} ?>
+		<p><input type="text" name="date" value="<?php echo $user->getbirthdate(); ?>" required/></p>
+		<p><input type="text" name="type" value="<?php echo UserType::toString($type); ?>" readonly/></p>
+
+		<input type="submit" value="Enregistrer les modifications"/>
+	</form>
+</div>

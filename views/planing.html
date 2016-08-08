@@ -1,0 +1,27 @@
+		<div class="planing">
+			<h1>Planing</h1>
+			<table width="80%">
+				<tr ><th></th><th>Lundi</th><th>Mardi</th><th>Mercredi</th><th>Jeudi</th><th>Vendredi</th></tr>
+				<?php
+				// De 8h à 17h
+				for ($j=8; $j <= 17; $j++) {
+					echo "<tr align=\"center\">\n";
+					// Du Lundi au vendredi - affichage horizontal pour les <td></td>
+					$temp_end_hour = $j+1; // cette variable est utilisée pour combler un bug qui empeche d'afficher $j+1
+					echo "<td style=\"border: none; width: 50px;\"><b>" . $j . "h à " . $temp_end_hour . "h</b></td>";
+					for($i=0; $i < 5; $i++){
+						$jour = $semaine[$i];
+						if($jour[$j] !== NULL){
+							$teacher = TeacherDAO::getTeacherById($jour[$j]->getTeacher());
+							echo "<td><b>" . $jour[$j]->getName() . "</b><br/>" . $jour[$j]->getGroup() . "<br/>" . $teacher->getLastname() . " " . $teacher->getFirstname() . "</td>\n";
+						}else{
+							// Pas d'interval donc tranche horaire libre.
+							echo "<td>Libre</td>\n";
+						}
+					}
+					echo "</tr>\n";
+				}
+				
+				?>
+			</table>
+		</div>

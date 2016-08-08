@@ -1,0 +1,15 @@
+<div>
+	<p> Veuillez selectionner les cours à supprimer pour le groupe : <?php echo $group->getName(); ?></p>
+	<form action='index.php?action=delete_interval' method='POST' accept-charset='UTF-8'>
+	<input type='hidden' name='submitted' id='submitted' value='1'/>
+
+	<?php
+	foreach ($planing as $elem){
+		echo"\t<input type=\"checkbox\" id=\"".$elem->getId()."\" name=\"cours".$elem->getId()."\" value=\"".$elem->getId()."\">\n";
+		echo "\t<label for=\"".$elem->getId()."\">".DayOfWeek::toString($elem->getDay()).' de '.$elem->getStartHour().'h à '.$elem->getEndHour()."h : <b>".$elem->getName()."</b><br/>\n";
+	}
+	?>
+
+	<input type="submit" value="Valider" />
+	</form>
+</div>

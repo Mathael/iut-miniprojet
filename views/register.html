@@ -1,0 +1,21 @@
+<div class="register">
+	<form id='register' action='index.php?action=register' method='post' accept-charset='UTF-8'>
+		<fieldset >
+			<legend>Enregistrement d'un membre</legend>
+			<p>Tous les champs sont obligatoires !</p>
+			<input type='hidden' name='submitted' id='submitted' value='1'/>
+			<label for='password' >Mot de passe :</label> <input type='password' name='password' id='password' maxlength='50' required="true"/> <br>
+			<label for='email' >Email :</label> <input type='email' name='email' id='email' maxlength='50' required="true"/>  <br>
+			<label for='nom' >Nom :</label> <input type='text' name='nom' id='nom' maxlength='50' required="true"/> <br>
+			<label for='prenom' >Prenom :</label> <input type='text' name='prenom' id='prenom' maxlength='50' required="true"/> <br>
+			<label for='date' >Date de naissance : </label> <input type="date" name='date' id='date' placeholder="jj/mm/aaaa" required="true"/> <br>
+			<label for='group' >Groupe (uniquement Etudiants) : </label> <input type='text' name='group' id='group' maxlength='50' /> <br>
+			<select name="type" required>
+				<option value="Student">Etudiant</option>
+				<option value="Teacher">Professeur</option>
+				<option value="Secretarie">Secretaire</option>
+			</select>
+			<input type='submit' value='Valider' />
+		</fieldset>
+	</form>
+</div>

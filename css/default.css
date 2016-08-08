@@ -1,0 +1,86 @@
+body{
+	width: 1024px;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+nav ul{
+	text-align: center;
+}
+ 
+nav ul li{
+	display: inline-block;
+	width: 150px;
+}
+
+.center{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+fieldset{
+	padding: 12px;
+}
+
+.clabel{
+	display: block;
+	width: 400px;
+	float: left;
+	text-align:right;
+}
+
+.register label{
+	display: block;
+	width: 350px;
+	float: left;
+	text-align:right;
+}
+
+.register_group form input[type='submit']  {
+	width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.register_interval label{
+	display: block;
+	width: 350px;
+	float: left;
+	text-align:right;
+}
+
+input{
+	margin-bottom: 10px;
+	margin-left: 5px;
+}
+
+select{
+	margin-bottom: 10px;
+	margin-left: 5px;
+}
+
+.planing table{
+	margin-left: auto;
+	margin-right: auto;
+}
+.planing td{
+	border: 1px solid black;
+	height: 60px;
+	width: 100px;
+	font-size: 12px;
+}
+.planing{text-align: center;}
+
+nav ul li a{
+	color: black;
+	text-decoration: none;
+}
+
+nav ul li a:hover{
+	color: black;
+	text-decoration: none;
+	font-style: italic;
+	border: 1px solid black;
+}

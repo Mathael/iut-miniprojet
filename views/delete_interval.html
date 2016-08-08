@@ -1,0 +1,17 @@
+	<div class="delete_interval">
+		<form id='delete_interval' action='index.php?action=delete_interval' method='post' accept-charset='UTF-8'>
+			<fieldset >
+			<label for='group' >Choisir un groupe : </label>
+			<select name="group" id="group" required>
+				<?php
+					if(!empty($result)){
+						foreach ($result as $value) {
+							echo '<option value="'.$value["name"].'">'.$value["name"].'</option>';
+						}
+					}
+				?>
+			</select>
+			<input type='submit' value='Valider' />
+			</fieldset>
+		</form>
+	</div>
